@@ -45,7 +45,7 @@ app.use(cors({
   // roigin: process.env.CLIENT_URL || 'http://localhost:5173',
   origin: [
     "http://localhost:5173",
-    "https://ordereasetula.vercel.app/"
+    "https://ordereasetula.vercel.app"
   ],
   credentials: true,
 }));
