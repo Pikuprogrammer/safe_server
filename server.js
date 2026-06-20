@@ -42,7 +42,11 @@ socketHandler(io);
 app.use(helmet({ contentSecurityPolicy: false })); // security headers
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev')); // request logging
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  // roigin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [
+    "http://localhost:5173",
+    "https://ordereasetula-cj5e2zvw5-tujmikolp.vercel.app"
+  ],
   credentials: true,
 }));
 app.use(express.json());
