@@ -42,8 +42,7 @@ socketHandler(io);
 app.use(helmet({ contentSecurityPolicy: false })); // security headers
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev')); // request logging
 app.use(cors({
-  // origin: process.env.CLIENT_URL || 'http://localhost:5173',
-  origin:"*",
+  origin: process.env.CLIENT_URL || 'http://localhost:5173',
   credentials: true,
 }));
 app.use(express.json());
