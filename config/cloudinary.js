@@ -5,5 +5,13 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_KEY,
   api_secret: process.env.CLOUDINARY_SECRET,
 });
+cloudinary.api.ping((error, result) => {
+    if (error) {
+      console.error("Cloudinary Ping Error:", error);
+    } else {
+      console.log("Cloudinary Connected:", result);
+    }
+  });
+  
 
 module.exports = cloudinary;
