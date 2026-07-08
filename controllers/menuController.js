@@ -61,7 +61,9 @@ exports.createMenuItem = async (req, res) => {
   try {
     const itemData = { ...req.body };
     if (req.file) {
-      itemData.image = `/uploads/${req.file.filename}`;
+      itemData.image = req.file.path;
+      // Optional:
+      // itemData.public_id = req.file.filename;
     }
     const item = await MenuItem.create(itemData);
     const populated = await MenuItem.findById(item._id).populate('category', 'name');
