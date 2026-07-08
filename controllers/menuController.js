@@ -80,7 +80,7 @@ exports.updateMenuItem = async (req, res) => {
   try {
     const updateData = { ...req.body };
     if (req.file) {
-      updateData.image = `/uploads/${req.file.filename}`;
+      updateData.image = req.file.path;
     }
 
     const item = await MenuItem.findByIdAndUpdate(req.params.id, updateData, {
