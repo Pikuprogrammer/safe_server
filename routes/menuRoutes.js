@@ -9,8 +9,8 @@ const {
   deleteMenuItem,
 } = require('../controllers/menuController');
 const protect = require('../middleware/auth');
-// const upload = require('../middleware/upload');
-const upload = require("../config/multer");
+const upload = require('../middleware/upload');
+// const upload = require("../config/multer");
 
 router.get('/', getMenuItems);
 router.get('/all', protect, getAllMenuItems);
